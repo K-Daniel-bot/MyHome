@@ -79,6 +79,22 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-primary">
+      {/* Layer 0: Background image */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80&auto=format&fit=crop"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.18] pointer-events-none select-none"
+        loading="eager"
+      />
+      {/* Layer 1: Dark fade-out overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.72) 55%, rgba(10,10,10,1) 100%)' }}
+        aria-hidden="true"
+      />
+
       {/* Particle canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" aria-hidden="true" />
 

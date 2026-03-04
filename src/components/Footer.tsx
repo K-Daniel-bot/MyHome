@@ -7,8 +7,10 @@ interface FooterProps {
 const navLinks = [
   { label: '홈', href: '#home' },
   { label: '서비스', href: '#services' },
+  { label: '프로세스', href: '#process' },
   { label: '실적', href: '#stats' },
   { label: '소개', href: '#about' },
+  { label: 'FAQ', href: '#faq' },
   { label: '연락처', href: '#contact' },
 ]
 

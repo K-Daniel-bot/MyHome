@@ -17,8 +17,10 @@ export default function Header({ sticky = true }: HeaderProps) {
   const navItems = [
     { label: '홈', href: '#home' },
     { label: '서비스', href: '#services' },
+    { label: '프로세스', href: '#process' },
     { label: '실적', href: '#stats' },
     { label: '소개', href: '#about' },
+    { label: 'FAQ', href: '#faq' },
     { label: '연락처', href: '#contact' },
   ]
 
@@ -37,7 +39,7 @@ export default function Header({ sticky = true }: HeaderProps) {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-5">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -69,7 +71,7 @@ export default function Header({ sticky = true }: HeaderProps) {
       {/* Mobile Navigation */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? 'max-h-96' : 'max-h-0'
+          isMenuOpen ? 'max-h-[30rem]' : 'max-h-0'
         } bg-black/95 backdrop-blur-md border-b border-white/10`}
       >
         <nav className="container py-4 flex flex-col gap-1">
