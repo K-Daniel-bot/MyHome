@@ -6,8 +6,9 @@ interface FooterProps {
 
 const navLinks = [
   { label: '홈', href: '#home' },
-  { label: '소개', href: '#about' },
   { label: '서비스', href: '#services' },
+  { label: '실적', href: '#stats' },
+  { label: '소개', href: '#about' },
   { label: '연락처', href: '#contact' },
 ]
 
@@ -44,7 +45,7 @@ const socialLinks = [
   },
 ]
 
-export default function Footer({ companyName = 'MyHome' }: FooterProps) {
+export default function Footer({ companyName = 'AgentOS' }: FooterProps) {
   const year = new Date().getFullYear()
 
   return (
@@ -57,7 +58,7 @@ export default function Footer({ companyName = 'MyHome' }: FooterProps) {
               {companyName}
             </a>
             <p className="text-white/35 text-sm leading-relaxed max-w-xs">
-              최신 기술과 창의적인 디자인으로 비즈니스의 디지털 목표를 실현합니다.
+              커스텀 AI 에이전트로 비즈니스를 자동화합니다. 아이디어에서 프로덕션까지.
             </p>
           </div>
 
@@ -103,7 +104,7 @@ export default function Footer({ companyName = 'MyHome' }: FooterProps) {
             © {year} {companyName}. 모든 권리 보유.
           </p>
           <p className="text-white/15 text-xs">
-            Next.js · TypeScript · Tailwind CSS로 제작
+            Claude API · LangChain · Next.js로 구동
           </p>
         </div>
       </div>

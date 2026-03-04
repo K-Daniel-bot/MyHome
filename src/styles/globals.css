@@ -79,7 +79,11 @@ body {
 
   .card-dark {
     @apply bg-secondary border border-border rounded-xl p-6
-           hover:border-accent/40 transition-all duration-300;
+           hover:border-accent/40 hover:shadow-lg transition-all duration-300;
+    box-shadow: 0 0 0 0 rgba(212,175,55,0);
+  }
+  .card-dark:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(212,175,55,0.15);
   }
 
   .gradient-text {
@@ -88,5 +92,16 @@ body {
 
   .glass {
     @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  /* ─── Noise texture overlay ─── */
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
   }
 }

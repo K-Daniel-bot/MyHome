@@ -112,10 +112,10 @@ export default function Contact({ onSubmit }: ContactProps) {
         <div className="text-center mb-16 animate-on-scroll">
           <p className="text-accent text-sm font-medium tracking-widest uppercase mb-3">Contact</p>
           <h2 className="section-title">
-            함께 <span className="gradient-text">시작해요</span>
+            AI 도입을 <span className="gradient-text">시작하세요</span>
           </h2>
           <p className="text-white/40 text-lg max-w-xl mx-auto mt-4">
-            프로젝트가 있으신가요? 지금 바로 대화를 시작해보세요.
+            AI 에이전트 도입을 고민 중이신가요? 무료 컨설팅으로 가능성을 확인하세요.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export default function Contact({ onSubmit }: ContactProps) {
                   {info.icon}
                 </div>
                 <div>
-                  <p className="text-white/35 text-xs uppercase tracking-widest mb-1">{info.label}</p>
+                  <p className="text-white/30 text-xs uppercase tracking-widest mb-1">{info.label}</p>
                   <p className="text-white/75 font-medium">{info.value}</p>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function Contact({ onSubmit }: ContactProps) {
                 <span className="w-2 h-2 bg-accent rounded-full animate-pulse" aria-hidden="true" />
                 <span className="text-accent text-sm font-medium">빠른 응답 보장</span>
               </div>
-              <p className="text-white/40 text-sm">보통 24시간 이내에 답변드립니다.</p>
+              <p className="text-white/40 text-sm">보통 24시간 이내 답변 + 무료 상담 제공</p>
             </div>
           </div>
 

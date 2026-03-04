@@ -7,16 +7,16 @@ interface AboutProps {
 }
 
 const skills = [
-  'React', 'Next.js', 'TypeScript', 'Node.js',
-  'Tailwind CSS', 'PostgreSQL', 'AWS', 'Figma',
-  'GraphQL', 'Docker',
+  'Claude API', 'OpenAI GPT-4', 'LangChain', 'LlamaIndex',
+  'Pinecone', 'Python', 'TypeScript', 'Docker',
+  'AWS', 'FastAPI',
 ]
 
 const highlights = [
-  '최신 웹 기술 (React, Next.js, TypeScript)',
-  '사용자 중심 디자인 원칙',
-  '지속적인 학습과 기술 향상',
-  '프리랜스 및 장기 프로젝트 가능',
+  '멀티에이전트 오케스트레이션 시스템 구축 전문',
+  'RAG 파이프라인 설계 및 프로덕션 배포 경험',
+  'LLM 파인튜닝 및 추론 최적화 (비용 90% 절감)',
+  '스타트업·대기업 50개사 AI 도입 컨설팅',
 ]
 
 const CheckIcon = () => (
@@ -27,8 +27,8 @@ const CheckIcon = () => (
 
 export default function About({
   name = 'Daniel',
-  role = '풀스택 웹 개발자 & UI/UX 디자이너',
-  bio = '5년 이상의 경험을 바탕으로 비즈니스의 목표를 달성하는 웹 솔루션을 만들어 드립니다. 코드 품질과 사용자 경험 모두를 중요시하며, 최신 기술 트렌드를 항상 따라갑니다.',
+  role = 'AI 에이전트 솔루션 아키텍트',
+  bio = 'Claude, GPT-4 등 최신 LLM 기반의 AI 에이전트 시스템을 3년간 전문적으로 개발해왔습니다. 단순 자동화를 넘어 비즈니스의 의사결정까지 보조하는 지능형 에이전트 구현이 전문 영역입니다.',
 }: AboutProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
 
@@ -54,12 +54,12 @@ export default function About({
     <section id="about" ref={sectionRef} className="section bg-secondary">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Profile Image */}
+          {/* Visual — Agent node diagram */}
           <div className="animate-on-scroll-left flex justify-center">
             <div className="relative">
               {/* Glow */}
               <div
-                className="absolute -inset-4 rounded-2xl blur-xl opacity-30"
+                className="absolute -inset-4 rounded-2xl blur-xl opacity-30 pointer-events-none"
                 style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.4) 0%, transparent 70%)' }}
                 aria-hidden="true"
               />
@@ -67,38 +67,44 @@ export default function About({
               <div className="relative w-72 h-72 md:w-80 md:h-80 bg-surface rounded-2xl border border-accent/20 overflow-hidden flex items-center justify-center">
                 <div
                   className="absolute inset-0 opacity-20"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle at 50% 40%, rgba(212,175,55,0.5) 0%, transparent 65%)',
-                  }}
+                  style={{ backgroundImage: 'radial-gradient(circle at 50% 40%, rgba(212,175,55,0.5) 0%, transparent 65%)' }}
                   aria-hidden="true"
                 />
-                <div className="relative text-center">
-                  <div className="w-24 h-24 rounded-full bg-accent/10 border-2 border-accent/25 flex items-center justify-center mx-auto mb-3">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12 text-accent/40" aria-hidden="true">
-                      <path d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" />
+                {/* Agent node visual */}
+                <div className="relative flex flex-col items-center gap-4" aria-hidden="true">
+                  {/* Center node */}
+                  <div className="w-16 h-16 rounded-full bg-accent/20 border-2 border-accent/50 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8 text-accent">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
                     </svg>
                   </div>
-                  <p className="text-white/25 text-sm">프로필 이미지</p>
+                  {/* Sub nodes */}
+                  <div className="flex gap-5">
+                    {['R', 'A', 'W'].map((label) => (
+                      <div key={label} className="w-10 h-10 rounded-full bg-white/5 border border-white/20 flex items-center justify-center">
+                        <span className="text-white/40 text-xs font-mono font-bold">{label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-white/20 text-xs font-mono">orchestrator</p>
                 </div>
               </div>
               {/* Badge */}
               <div className="absolute -bottom-4 -right-4 bg-accent text-black px-4 py-2 rounded-xl font-bold text-sm shadow-xl">
-                5년+ 경력
+                3년+ 경력
               </div>
             </div>
           </div>
 
           {/* Content */}
           <div className="animate-on-scroll-right">
-            <p className="text-accent text-sm font-medium tracking-widest uppercase mb-3">About Me</p>
+            <p className="text-accent text-sm font-medium tracking-widest uppercase mb-3">About</p>
             <h2 className="section-title mb-2">
               {name} <span className="gradient-text">소개</span>
             </h2>
             <p className="text-accent font-medium mb-5">{role}</p>
             <p className="text-white/55 text-lg leading-relaxed mb-8">{bio}</p>
 
-            {/* Highlights */}
             <ul className="space-y-3 mb-8">
               {highlights.map((point) => (
                 <li key={point} className="flex items-start gap-3 text-white/65">
@@ -108,7 +114,6 @@ export default function About({
               ))}
             </ul>
 
-            {/* Skills */}
             <div className="mb-8">
               <p className="text-white/35 text-xs font-medium uppercase tracking-widest mb-3">기술 스택</p>
               <div className="flex flex-wrap gap-2">
@@ -123,10 +128,9 @@ export default function About({
               </div>
             </div>
 
-            {/* Actions */}
             <div className="flex flex-wrap gap-3">
               <a href="#contact" className="btn-primary">프로젝트 시작하기</a>
-              <a href="#" className="btn-secondary">이력서 다운로드</a>
+              <a href="#services" className="btn-secondary">서비스 보기</a>
             </div>
           </div>
         </div>

@@ -16,9 +16,9 @@ export default function Header({ sticky = true }: HeaderProps) {
 
   const navItems = [
     { label: '홈', href: '#home' },
-    { label: '소개', href: '#about' },
     { label: '서비스', href: '#services' },
-    { label: '통계', href: '#stats' },
+    { label: '실적', href: '#stats' },
+    { label: '소개', href: '#about' },
     { label: '연락처', href: '#contact' },
   ]
 
@@ -33,7 +33,7 @@ export default function Header({ sticky = true }: HeaderProps) {
       <div className="container flex justify-between items-center py-5">
         {/* Logo */}
         <a href="#home" className="font-heading text-2xl font-bold gradient-text cursor-pointer">
-          MyHome
+          AgentOS
         </a>
 
         {/* Desktop Navigation */}
