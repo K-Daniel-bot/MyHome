@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ─── Scroll-triggered animations ─── */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animate-on-scroll-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animate-on-scroll-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animate-on-scroll.in-view,
+.animate-on-scroll-left.in-view,
+.animate-on-scroll-right.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .animate-on-scroll-left,
+  .animate-on-scroll-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Component layer ─── */
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-accent text-black rounded-lg font-semibold
+           hover:bg-accent-muted transition-all duration-300
+           cursor-pointer focus:outline-none focus:ring-2
+           focus:ring-accent focus:ring-offset-2 focus:ring-offset-black;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           border border-white/20 text-white rounded-lg font-semibold
+           hover:border-accent hover:text-accent transition-all duration-300
+           cursor-pointer focus:outline-none focus:ring-2
+           focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black;
+  }
+
+  .section {
+    @apply py-20 md:py-32;
+  }
+
+  .section-title {
+    @apply font-heading text-4xl md:text-5xl font-bold;
+  }
+
+  .card-dark {
+    @apply bg-secondary border border-border rounded-xl p-6
+           hover:border-accent/40 transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-yellow-200 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
